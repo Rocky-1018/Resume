@@ -3,131 +3,331 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prashanth Bethi Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Prashanth Bethi - Full-Stack Developer specializing in React, Node.js, and high-performance web solutions. View my portfolio and projects.">
+    <meta name="keywords" content="Full-Stack Developer, React, Node.js, Web Development, Portfolio">
+    <meta name="author" content="Prashanth Bethi">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Prashanth Bethi | Creative Full-Stack Developer">
+    <meta property="og:description" content="Full-Stack Developer specializing in high-performance web solutions">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:image" content="https://yourwebsite.com/og-image.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Prashanth Bethi | Full-Stack Developer">
+    <meta name="twitter:description" content="Full-Stack Developer specializing in high-performance web solutions">
+    
+    <title>Prashanth Bethi | Creative Full-Stack Developer</title>
+    
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="Portfolio.png" as="image">
+    <link rel="preload" href="style.css" as="style">
+    
+    <!-- Fonts with font-display swap for better performance -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
-<body class="bg-gray-100 font-roboto">
-    <header class="bg-white shadow">
-        <div class="container mx-auto px-4 py-6 flex justify-between items-center">
-            <h1 class="text-3xl font-bold">Prashanth Bethi</h1>
-            <nav>
-                <ul class="flex space-x-4">
-                    <li><a href="#education" class="text-gray-700 hover:text-blue-500">Education</a></li>
-                    <li><a href="#experience" class="text-gray-700 hover:text-blue-500">Experience</a></li>
-                    <li><a href="#skills" class="text-gray-700 hover:text-blue-500">Skills</a></li>
-                    <li><a href="#projects" class="text-gray-700 hover:text-blue-500">Projects</a></li>
-                    <li><a href="#certifications" class="text-gray-700 hover:text-blue-500">Certifications</a></li>
-                </ul>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <div id="app-wrapper">
+        <!-- Semantic header element -->
+        <header>
+            <nav class="top-navbar" role="navigation" aria-label="Main navigation">
+                <div class="nav-left">
+                    <a href="#hero" class="brand-name" aria-label="Prashanth Bethi - Home">PB</a>
+                </div>
+                <div class="nav-center" id="navLinks">
+                    <ul class="main-nav-links" role="menubar">
+                        <li role="none"><a href="#projects" role="menuitem">Projects</a></li>
+                        <li role="none"><a href="#about" role="menuitem">About</a></li>
+                        <li role="none"><a href="#skills" role="menuitem">Skills</a></li>
+                        <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="nav-right">
+                    <button id="theme-toggle" class="icon-btn" aria-label="Toggle dark/light mode">
+                        <svg id="sun-icon" class="theme-icon active" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.75c-.41 0-.75.34-.75.75v1.5a.75.75 0 001.5 0V3.5c0-.41-.34-.75-.75-.75zm6.18 2.05a.75.75 0 00-1.06 0l-1.06 1.06a.75.75 0 101.06 1.06l1.06-1.06a.75.75 0 000-1.06zm-10.74 0a.75.75 0 00-1.06 0L4.29 5.85a.75.75 0 101.06 1.06l1.06-1.06a.75.75 0 000-1.06zM2.75 12a.75.75 0 00.75.75h1.5a.75.75 0 000-1.5H3.5c-.41 0-.75.34-.75.75zm15 0a.75.75 0 00.75-.75h1.5a.75.75 0 000 1.5H18.5c-.41 0-.75-.34-.75-.75zM5.85 18.18a.75.75 0 001.06 0l1.06-1.06a.75.75 0 10-1.06-1.06l-1.06 1.06a.75.75 0 000 1.06zm10.74 0a.75.75 0 001.06 0l1.06-1.06a.75.75 0 10-1.06-1.06l-1.06 1.06a.75.75 0 000 1.06zM12 18.25a.75.75 0 00-.75.75v1.5c0 .41.34.75.75.75s.75-.34.75-.75v-1.5a.75.75 0 00-.75-.75zM12 7a5 5 0 100 10 5 5 0 000-10zm0 1.5a3.5 3.5 0 110 7 3.5 3.5 0 010-7z"/></svg>
+                        <svg id="moon-icon" class="theme-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.54 19.95c-.83 0-1.63-.09-2.4-.27-.08-.02-.17-.03-.25-.04-.01 0-.01-.01-.02-.01A9.5 9.5 0 014.28 9.5a9.54 9.54 0 0115.17-6.93c.12.06.2.19.2.33 0 .15-.09.28-.23.33a7.54 7.54 0 00-12.8 5.77A7.5 7.5 0 009.54 19.95z"/></svg>
+                    </button>
+                    <a href="resume.pdf" class="btn btn-small" download aria-label="Download resume as PDF">Resume</a>
+                    <button class="nav-toggle" id="navToggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="navLinks">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
             </nav>
+        </header>
+
+        <div id="main-layout">
+            <aside class="left-sidebar" role="complementary" aria-label="Profile information">
+                <div class="profile-card">
+                    <img src="Portfolio.png" alt="Prashanth Bethi professional headshot" class="profile-avatar" width="200" height="200">
+                    <h3>Prashanth Bethi</h3>
+                    <p class="role">Full-Stack Developer</p>
+                    <ul class="quick-links">
+                        <li><a href="https://github.com/bprash1999" target="_blank" rel="noopener noreferrer" aria-label="Visit my GitHub profile">GitHub</a></li>
+                        <li><a href="https://linkedin.com/in/bprash1999" target="_blank" rel="noopener noreferrer" aria-label="Visit my LinkedIn profile">LinkedIn</a></li>
+                        <li><a href="#contact">Contact Me</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <main class="center-content" id="main-content">
+                <section id="hero" class="full-viewport-section" aria-label="Hero section">
+                    <div class="hero-background" role="presentation" aria-hidden="true">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" alt="" width="1920" height="1080">
+                    </div>
+                    <div class="hero-content">
+                        <div class="hero-left">
+                            <img src="Portfolio.png" alt="Prashanth Bethi avatar" class="hero-avatar" width="80" height="80">
+                            <h2>Prashanth Bethi</h2>
+                        </div>
+                        <div class="hero-center">
+                            <h1>Crafting Digital Experiences.</h1>
+                            <p class="tagline">Full-Stack Developer specializing in high-performance web solutions.</p>
+                            <div class="hero-cta-buttons">
+                                <a href="#projects" class="btn primary">View Projects</a>
+                                <a href="resume.pdf" class="btn secondary" download>Download Resume</a>
+                            </div>
+                        </div>
+                        <div class="hero-right">
+                            <div class="stat-chip">Years Coding: 5+</div>
+                            <div class="stat-chip">Main Stack: React, Node.js</div>
+                            <div class="stat-chip">Location: Vancouver, BC</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="projects" class="full-viewport-section section-content-padded" aria-labelledby="projects-heading">
+                    <h2 id="projects-heading">Selected Work</h2>
+                    <p class="section-description">Projects that reflect my current skills and problem-solving approach.</p>
+                    <div class="project-grid">
+                        <!-- Project 1 -->
+                        <article class="project-card">
+                            <img src="project1.jpg" alt="Event Reminder Application interface showing email notification dashboard" loading="lazy" width="800" height="600">
+                            <div class="card-content">
+                                <h3>Event Reminder Application</h3>
+                                <p>Automated workflow for sending customized email notifications for events.</p>
+                                <div class="tech-tags" role="list" aria-label="Technologies used">
+                                    <span role="listitem">Python</span><span role="listitem">Pandas</span><span role="listitem">SMTP</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="btn btn-small secondary" aria-label="View live demo of Event Reminder Application">Live Demo</a>
+                                    <a href="https://github.com/bprash1999/event-reminder" class="btn btn-small secondary" target="_blank" rel="noopener noreferrer" aria-label="View Event Reminder Application source code on GitHub">GitHub</a>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- Project 2 -->
+                        <article class="project-card">
+                            <img src="project2.jpg" alt="FlavorPal mobile application showing restaurant discovery interface" loading="lazy" width="800" height="600">
+                            <div class="card-content">
+                                <h3>FlavorPal: Local Flavor Explorer App</h3>
+                                <p>User-centric mobile app enhancing local dining with personalized features.</p>
+                                <div class="tech-tags" role="list" aria-label="Technologies used">
+                                    <span role="listitem">React Native</span><span role="listitem">Figma</span><span role="listitem">Agile</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="btn btn-small secondary" aria-label="View live demo of FlavorPal">Live Demo</a>
+                                    <a href="https://github.com/bprash1999/flavorpal" class="btn btn-small secondary" target="_blank" rel="noopener noreferrer" aria-label="View FlavorPal source code on GitHub">GitHub</a>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- Project 3 -->
+                        <article class="project-card">
+                            <img src="project3.jpg" alt="Project XYZ dashboard showing analytics and data visualization" loading="lazy" width="800" height="600">
+                            <div class="card-content">
+                                <h3>Project XYZ</h3>
+                                <p>A brief description of another exciting project.</p>
+                                <div class="tech-tags" role="list" aria-label="Technologies used">
+                                    <span role="listitem">Node.js</span><span role="listitem">MongoDB</span><span role="listitem">AWS</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="btn btn-small secondary" aria-label="View live demo of Project XYZ">Live Demo</a>
+                                    <a href="https://github.com/bprash1999/project-xyz" class="btn btn-small secondary" target="_blank" rel="noopener noreferrer" aria-label="View Project XYZ source code on GitHub">GitHub</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section id="about" class="full-viewport-section section-content-padded" aria-labelledby="about-heading">
+                    <h2 id="about-heading">About Me</h2>
+                    <div class="about-content-wrapper">
+                        <div class="about-bio">
+                            <p>My journey as a Full-Stack Developer is fueled by a relentless curiosity and a passion for turning complex challenges into elegant, high-performing solutions. With a strong foundation in computer science and a knack for both front-end aesthetics and back-end logic, I thrive on building applications that are not only functional but also deliver exceptional user experiences.</p>
+                            <p>I specialize in crafting robust web applications, leveraging modern frameworks and cloud technologies to create scalable and maintainable systems. Whether it's optimizing performance, architecting microservices, or diving deep into software localization, I am constantly seeking innovative ways to enhance global user experiences and deliver impactful results.</p>
+                            <p>Outside of code, you might find me exploring the latest design trends, contributing to open-source projects, or hiking the beautiful trails of British Columbia.</p>
+                        </div>
+                        <div class="about-highlights">
+                            <h3>Key Milestones</h3>
+                            <ul>
+                                <li>Built first full-stack app (2020)</li>
+                                <li>Shipped X client project (2022)</li>
+                                <li>Completing Post-Bac Diploma (Expected 2025)</li>
+                            </ul>
+                            <h3>How I Work</h3>
+                            <ul>
+                                <li>Transparent communication</li>
+                                <li>Test-driven development</li>
+                                <li>Performance-first approach</li>
+                                <li>Collaborative tools (Jira, Slack)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="skills" class="full-viewport-section section-content-padded" aria-labelledby="skills-heading">
+                    <h2 id="skills-heading">My Toolkit</h2>
+                    <p class="section-description">A curated list of technologies I use to bring ideas to life.</p>
+                    <div class="skills-3-column-grid">
+                        <div class="skills-column">
+                            <h3>Languages & Core Tech</h3>
+                            <ul role="list">
+                                <li role="listitem">Python</li>
+                                <li role="listitem">Java</li>
+                                <li role="listitem">C#</li>
+                                <li role="listitem">JavaScript</li>
+                                <li role="listitem">TypeScript</li>
+                                <li role="listitem">SQL</li>
+                                <li role="listitem">HTML5</li>
+                                <li role="listitem">CSS3</li>
+                            </ul>
+                        </div>
+                        <div class="skills-column">
+                            <h3>Frameworks & Libraries</h3>
+                            <ul role="list">
+                                <li role="listitem">React.js</li>
+                                <li role="listitem">Next.js</li>
+                                <li role="listitem">Django</li>
+                                <li role="listitem">Express.js</li>
+                                <li role="listitem">Pandas</li>
+                                <li role="listitem">NumPy</li>
+                                <li role="listitem">Akka</li>
+                            </ul>
+                        </div>
+                        <div class="skills-column">
+                            <h3>Tools & Platforms</h3>
+                            <ul role="list">
+                                <li role="listitem">Git</li>
+                                <li role="listitem">GitHub</li>
+                                <li role="listitem">AWS</li>
+                                <li role="listitem">Azure</li>
+                                <li role="listitem">Docker</li>
+                                <li role="listitem">Kubernetes</li>
+                                <li role="listitem">VS Code</li>
+                                <li role="listitem">Jira</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="experience" class="full-viewport-section section-content-padded" aria-labelledby="experience-heading">
+                    <h2 id="experience-heading">Experience & Education</h2>
+                    <div class="timeline" role="list">
+                        <article class="timeline-item" role="listitem">
+                            <h3>Network Engineer</h3>
+                            <p class="company">Sai Sri Coach Builders, Hyderabad, India</p>
+                            <p class="date"><time datetime="2021-09">September 2021</time> – <time datetime="2022-11">November 2022</time></p>
+                            <ul>
+                                <li>Designed, implemented, and maintained scalable network infrastructure.</li>
+                                <li>Automated configuration processes for network devices, enhancing operational efficiency.</li>
+                            </ul>
+                        </article>
+                        <article class="timeline-item" role="listitem">
+                            <h3>Post-Baccalaureate Diploma in Emerging Technologies</h3>
+                            <p class="school">Douglas College, New Westminster, BC</p>
+                            <p class="date">Expected <time datetime="2025-12">Dec 2025</time></p>
+                            <ul>
+                                <li>Relevant Courses: Data Structures & Algorithms (A+), Mobile App Development (A-), Software Development (A)</li>
+                            </ul>
+                        </article>
+                        <article class="timeline-item" role="listitem">
+                            <h3>Bachelor of Technology in Electrical & Electronics Engineering</h3>
+                            <p class="school">Institute of Aeronautical Engineering, Hyderabad, India</p>
+                            <p class="date"><time datetime="2021-09">September 2021</time></p>
+                        </article>
+                    </div>
+                </section>
+
+                <section id="contact" class="full-viewport-section section-content-padded" aria-labelledby="contact-heading">
+                    <h2 id="contact-heading">Get in Touch</h2>
+                    <p class="section-description">Ready to collaborate or discuss new opportunities? Let's connect!</p>
+                    <form class="contact-form" action="/submit-contact" method="POST" aria-label="Contact form">
+                        <label for="contact-name" class="sr-only">Your Name</label>
+                        <input type="text" id="contact-name" name="name" placeholder="Your Name" required aria-required="true">
+                        
+                        <label for="contact-email" class="sr-only">Your Email</label>
+                        <input type="email" id="contact-email" name="email" placeholder="Your Email" required aria-required="true">
+                        
+                        <label for="contact-message" class="sr-only">Your Message</label>
+                        <textarea id="contact-message" name="message" placeholder="Your Message" rows="5" required aria-required="true"></textarea>
+                        
+                        <button type="submit" class="btn primary">Send Message</button>
+                    </form>
+                    <div class="social-links" role="list" aria-label="Social media links">
+                        <a href="https://github.com/bprash1999" target="_blank" rel="noopener noreferrer" class="social-btn" role="listitem" aria-label="Visit my GitHub profile">GitHub</a>
+                        <a href="https://linkedin.com/in/bprash1999" target="_blank" rel="noopener noreferrer" class="social-btn" role="listitem" aria-label="Visit my LinkedIn profile">LinkedIn</a>
+                        <a href="mailto:bethiprashanth87@gmail.com" class="social-btn" role="listitem" aria-label="Send me an email">Email</a>
+                    </div>
+                </section>
+
+                <footer role="contentinfo">
+                    <div class="container">
+                        <p>&copy; 2024 Prashanth Bethi. All rights reserved.</p>
+                        <div class="footer-social">
+                            <a href="https://github.com/bprash1999" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">GitHub</a>
+                            <a href="https://linkedin.com/in/bprash1999" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">LinkedIn</a>
+                        </div>
+                    </div>
+                </footer>
+            </main>
+
+            <aside class="right-sidebar" role="complementary" aria-label="Additional information">
+                <div class="sidebar-card">
+                    <h3>Tech Stack</h3>
+                    <div class="tech-stack-icons" role="list" aria-label="Primary technologies">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width="40" height="40" loading="lazy">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" width="40" height="40" loading="lazy">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" width="40" height="40" loading="lazy">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aws/aws-original.svg" alt="AWS" width="40" height="40" loading="lazy">
+                    </div>
+                </div>
+                <div class="sidebar-card">
+                    <h3>Currently Building</h3>
+                    <ul>
+                        <li>Portfolio V2 (this site!)</li>
+                        <li>AI-powered Dev Tool</li>
+                    </ul>
+                </div>
+                <div class="sidebar-card">
+                    <h3>GitHub Activity</h3>
+                    <p>Fetching latest commits...</p>
+                </div>
+                <div class="sidebar-card">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="resume.pdf" download>Download Resume</a></li>
+                        <li><a href="#contact">Hire Me</a></li>
+                    </ul>
+                </div>
+            </aside>
         </div>
-    </header>
+    </div>
 
-    <main class="container mx-auto px-4 py-8">
-        <section id="contact" class="mb-8">
-            <h2 class="text-2xl font-bold mb-4">Contact Information</h2>
-            <p>Vancouver, BC | +1 (778) 956-1810 | <a href="mailto:Bethiprashanth87@gmail.com" class="text-blue-500">Bethiprashanth87@gmail.com</a> | <a href="https://www.linkedin.com/in/bprash1999/" class="text-blue-500">LinkedIn</a></p>
-        </section>
-
-        <section id="education" class="mb-8">
-            <h2 class="text-2xl font-bold mb-4">Education</h2>
-            <div class="bg-white p-6 rounded-lg shadow">
-                <h3 class="text-xl font-semibold">Computer Studies & Information Systems – Emerging Technologies</h3><p>January 2023 – December 2025 (Expected)</p>
-                
-                <p>Douglas College, New Westminster, British Columbia</p>
-            </div>
-        </section>
-
-        <section id="experience" class="mb-8">
-            <h2 class="text-2xl font-bold mb-4">Work Experience</h2>
-            <div class="bg-white p-6 rounded-lg shadow mb-4">
-                <h3 class="text-xl font-semibold">Concierge, Eureka Security, British Columbia</h3>
-                <p>September 2023 – Present</p>
-                <ul class="list-disc pl-5">
-                    <li>Delivered exceptional customer service by addressing guest inquiries, making reservations, and coordinating personalized experiences to ensure memorable stays.</li>
-                    <li>Facilitated transportation arrangements, event bookings, and itinerary planning for international and local guests, tailoring services to diverse needs.</li>
-                    <li>Efficiently resolved guest complaints and operational challenges, maintaining high satisfaction ratings and positive guest feedback.</li>
-                    <li>Collaborated with cross-functional teams to manage daily operations and improve service delivery in a fast-paced environment.</li>
-                    <li>Organized and guided large groups, including corporate clients and tour groups, ensuring smooth coordination and elevated guest experiences.</li>
-                </ul>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow">
-                <h3 class="text-xl font-semibold">Network Engineer, Sai Sri Coach Builders, Hyderabad</h3>
-                <p>September 2021 - November 2022</p>
-                <ul class="list-disc pl-5">
-                    <li>Designed, implemented, and maintained network infrastructure to ensure seamless connectivity and optimal performance across multiple locations.</li>
-                    <li>Configured and managed routers, switches, firewalls, and other network devices to support business operations and security requirements.</li>
-                    <li>Collaborated with cross-functional teams to plan and execute network upgrades, expansions, and migrations.</li>
-                    <li>Implemented security protocols and conducted regular audits to safeguard network assets and data integrity.</li>
-                    <li>Provided technical support and training to end-users and colleagues on network-related matters.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="skills" class="mb-8">
-            <h2 class="text-2xl font-bold mb-4">Technical Skills</h2>
-            <div class="bg-white p-6 rounded-lg shadow mb-4">
-                <h3 class="text-xl font-semibold">Programming Languages</h3>
-                <p>Python, JavaScript, C, C++</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow mb-4">
-                <h3 class="text-xl font-semibold">Development</h3>
-                <p>HTML, CSS, React.js, Flask, Node.js, Express.js, Next.js, jQuery, Bootstrap, Tailwind, REST APIs</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow mb-4">
-                <h3 class="text-xl font-semibold">Tools</h3>
-                <p>Git and GitHub, Ansible, Docker, Postman, Dynatrace, Catchpoint</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow mb-4">
-                <h3 class="text-xl font-semibold">Databases, Data Science and Machine Learning</h3>
-                <p>MySQL, MongoDB, PostgreSQL, PL/SQL, Pandas, NumPy, Matplotlib, Scikit-learn</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow">
-                <h3 class="text-xl font-semibold">Other Skills</h3>
-                <p>Data Structures & Algorithms, Computer Networking, Linux kernel, Cloud Computing</p>
-            </div>
-        </section>
-
-        <section id="projects" class="mb-8">
-            <h2 class="text-2xl font-bold mb-4">Projects</h2>
-            <div class="bg-white p-6 rounded-lg shadow mb-4">
-                <h3 class="text-xl font-semibold">Event Reminder Application</h3>
-                <p>Python, SMTP, Pandas <a href="#" class="text-blue-500">GitHub</a></p>
-                <p>Developed an event reminder application using Python, which automates email notifications for upcoming events. The application utilizes SMTP for email automation, Pandas for data processing from Excel files, and is deployed on PythonAnywhere for continuous operation and accessibility.</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow">
-                <h3 class="text-xl font-semibold">FlavorPal</h3>
-                <p>Figma</p>
-                <p>The application provides features for managing blog posts, categories, user registration, and authentication. It includes interactions with a cloud storage service for image uploads.</p>
-            </div>
-        </section>
-
-        <section id="certifications" class="mb-8">
-            <h2 class="text-2xl font-bold mb-4">Certifications</h2>
-            <div class="bg-white p-6 rounded-lg shadow mb-4">
-                <h3 class="text-xl font-semibold">Python Developer Bootcamp</h3>
-                <p>Udemy Credential</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow mb-4">
-                <h3 class="text-xl font-semibold">Problem Solving</h3>
-                <p>HackerRank Credential</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow">
-                <h3 class="text-xl font-semibold">Ethical Hacking from Scratch</h3>
-                <p>Udemy Credential</p>
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-white shadow py-6">
-        <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2023 Prashanth Bethi. All rights reserved.</p>
-        </div>
-    </footer>
+    <div class="custom-cursor" aria-hidden="true"></div>
+    <script src="script.js" defer></script>
 </body>
 </html>
-
-
-
