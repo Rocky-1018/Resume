@@ -57,10 +57,29 @@
                     </ul>
                 </div>
                 <div class="nav-right">
-                    <button id="theme-toggle" class="icon-btn" aria-label="Toggle dark/light mode">
-                        <svg id="sun-icon" class="theme-icon active" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.75c-.41 0-.75.34-.75.75v1.5a.75.75 0 001.5 0V3.5c0-.41-.34-.75-.75-.75zm6.18 2.05a.75.75 0 00-1.06 0l-1.06 1.06a.75.75 0 101.06 1.06l1.06-1.06a.75.75 0 000-1.06zm-10.74 0a.75.75 0 00-1.06 0L4.29 5.85a.75.75 0 101.06 1.06l1.06-1.06a.75.75 0 000-1.06zM2.75 12a.75.75 0 00.75.75h1.5a.75.75 0 000-1.5H3.5c-.41 0-.75.34-.75.75zm15 0a.75.75 0 00.75-.75h1.5a.75.75 0 000 1.5H18.5c-.41 0-.75-.34-.75-.75zM5.85 18.18a.75.75 0 001.06 0l1.06-1.06a.75.75 0 10-1.06-1.06l-1.06 1.06a.75.75 0 000 1.06zm10.74 0a.75.75 0 001.06 0l1.06-1.06a.75.75 0 10-1.06-1.06l-1.06 1.06a.75.75 0 000 1.06zM12 18.25a.75.75 0 00-.75.75v1.5c0 .41.34.75.75.75s.75-.34.75-.75v-1.5a.75.75 0 00-.75-.75zM12 7a5 5 0 100 10 5 5 0 000-10zm0 1.5a3.5 3.5 0 110 7 3.5 3.5 0 010-7z"/></svg>
-                        <svg id="moon-icon" class="theme-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.54 19.95c-.83 0-1.63-.09-2.4-.27-.08-.02-.17-.03-.25-.04-.01 0-.01-.01-.02-.01A9.5 9.5 0 014.28 9.5a9.54 9.54 0 0115.17-6.93c.12.06.2.19.2.33 0 .15-.09.28-.23.33a7.54 7.54 0 00-12.8 5.77A7.5 7.5 0 009.54 19.95z"/></svg>
-                    </button>
+                    <label class="theme-switch" for="theme-switch-checkbox" aria-label="Toggle between dark and light theme">
+                        <input type="checkbox" id="theme-switch-checkbox" />
+                        <span class="slider round">
+                             <span class="sun-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="5"></circle>
+                                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                                </svg>
+                            </span>
+                            <span class="moon-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                                </svg>
+                            </span>
+                        </span>
+                    </label>
                     <a href="resume.pdf" class="btn btn-small" download aria-label="Download resume as PDF">Resume</a>
                     <button class="nav-toggle" id="navToggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="navLinks">
                         <span></span>
@@ -74,13 +93,14 @@
         <div id="main-layout">
             <aside class="left-sidebar" role="complementary" aria-label="Profile information">
                 <div class="profile-card">
-                    <img src="Portfolio.png" alt="Prashanth Bethi professional headshot" class="profile-avatar" width="200" height="200">
+                    <img src="Portfolio.png" alt="Prashanth Bethi professional headshot" class="profile-avatar">
                     <h3>Prashanth Bethi</h3>
-                    <p class="role">Full-Stack Developer</p>
+
                     <ul class="quick-links">
                         <li><a href="https://github.com/bprash1999" target="_blank" rel="noopener noreferrer" aria-label="Visit my GitHub profile">GitHub</a></li>
                         <li><a href="https://linkedin.com/in/bprash1999" target="_blank" rel="noopener noreferrer" aria-label="Visit my LinkedIn profile">LinkedIn</a></li>
                         <li><a href="#contact">Contact Me</a></li>
+
                     </ul>
                 </div>
             </aside>
@@ -91,24 +111,15 @@
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" alt="" width="1920" height="1080">
                     </div>
                     <div class="hero-content">
-                        <div class="hero-left">
-                            <img src="Portfolio.png" alt="Prashanth Bethi avatar" class="hero-avatar" width="80" height="80">
-                            <h2>Prashanth Bethi</h2>
-                        </div>
+
                         <div class="hero-center">
-                            <h1>Crafting Digital Experiences.</h1>
-                            <p class="tagline">Full-Stack Developer specializing in high-performance web solutions.</p>
+                            <h1>Hi, I’m a Tech Enthusiast</h1>
+                            <p class="tagline">I love building things, learning continuously, and solving meaningful problems.</p>
                             <div class="hero-cta-buttons">
                                 <a href="#projects" class="btn primary">View Projects</a>
                                 <a href="resume.pdf" class="btn secondary" download>Download Resume</a>
                             </div>
                         </div>
-                        <div class="hero-right">
-                            <div class="stat-chip">Years Coding: 5+</div>
-                            <div class="stat-chip">Main Stack: React, Node.js</div>
-                            <div class="stat-chip">Location: Vancouver, BC</div>
-                        </div>
-                    </div>
                 </section>
 
                 <section id="projects" class="full-viewport-section section-content-padded" aria-labelledby="projects-heading">
@@ -296,33 +307,38 @@
             </main>
 
             <aside class="right-sidebar" role="complementary" aria-label="Additional information">
-                <div class="sidebar-card">
+                <div class="profile-card">
                     <h3>Tech Stack</h3>
-                    <div class="tech-stack-icons" role="list" aria-label="Primary technologies">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width="40" height="40" loading="lazy">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" width="40" height="40" loading="lazy">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" width="40" height="40" loading="lazy">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aws/aws-original.svg" alt="AWS" width="40" height="40" loading="lazy">
+                    <div class="slider-container">
+                        <div class="tech-stack-icons" role="list" aria-label="Primary technologies">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width="40" height="40" loading="lazy">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" width="40" height="40" loading="lazy">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" width="40" height="40" loading="lazy">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" width="40" height="40" loading="lazy">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" width="40" height="40" loading="lazy">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" width="40" height="40" loading="lazy">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="40" height="40" loading="lazy">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" width="40" height="40" loading="lazy">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" width="40" height="40" loading="lazy">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" width="40" height="40" loading="lazy">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" width="40" height="40" loading="lazy">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-original.svg" alt="Django" width="40" height="40" loading="lazy">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js" width="40" height="40" loading="lazy">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" width="40" height="40" loading="lazy">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" width="40" height="40" loading="lazy">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" width="40" height="40" loading="lazy">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="40" height="40" loading="lazy">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" width="40" height="40" loading="lazy">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-original.svg" alt="Kubernetes" width="40" height="40" loading="lazy">
+                        </div>
                     </div>
                 </div>
-                <div class="sidebar-card">
-                    <h3>Currently Building</h3>
-                    <ul>
-                        <li>Portfolio V2 (this site!)</li>
-                        <li>AI-powered Dev Tool</li>
-                    </ul>
-                </div>
-                <div class="sidebar-card">
-                    <h3>GitHub Activity</h3>
-                    <p>Fetching latest commits...</p>
-                </div>
-                <div class="sidebar-card">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="resume.pdf" download>Download Resume</a></li>
-                        <li><a href="#contact">Hire Me</a></li>
-                    </ul>
-                </div>
+                <div class="profile-card" id="github-activity">
+                        <h3>GitHub Activity</h3>
+                        <div id="repo-list">
+                            <p>Fetching latest commits...</p>
+                        </div>
+                    </div>
             </aside>
         </div>
     </div>

@@ -6,9 +6,6 @@
     // Cache DOM elements for performance
     const DOM = {
         body: document.body,
-        themeToggle: null,
-        sunIcon: null,
-        moonIcon: null,
         navToggle: null,
         navLinks: null,
         customCursor: null,
@@ -18,9 +15,6 @@
     // Initialize DOM cache when ready
     function cacheDOMElements() {
         try {
-            DOM.themeToggle = document.getElementById('theme-toggle');
-            DOM.sunIcon = document.getElementById('sun-icon');
-            DOM.moonIcon = document.getElementById('moon-icon');
             DOM.navToggle = document.getElementById('navToggle');
             DOM.navLinks = document.getElementById('navLinks');
             DOM.customCursor = document.querySelector('.custom-cursor');
@@ -184,7 +178,7 @@
 
                 elements.forEach(function(el, index) {
                     const animationType = el.dataset.animation || 'animate-fade-in-up';
-                    el.style.animationDelay = `${index * 0.1}s`;
+                    el.style.animationDelay = `${index * 0.5}s`;
                     el.classList.add(animationType);
                 });
 
@@ -209,42 +203,35 @@
 
     // Theme toggle functionality
     function setupThemeToggle() {
-        if (!DOM.themeToggle) {
-            console.warn('Theme toggle button not found');
+        const themeSwitch = document.getElementById('theme-switch-checkbox');
+        if (!themeSwitch) {
+            console.warn('Theme switch checkbox not found');
             return;
         }
 
-        try {
-            const savedTheme = localStorage.getItem('theme');
-            const isLightMode = savedTheme === 'light-mode';
+        // Set initial state from localStorage
+        const savedTheme = localStorage.getItem('theme');
+        const isLightMode = savedTheme === 'light-mode';
+
+        DOM.body.classList.toggle('light-mode', isLightMode);
+        themeSwitch.checked = isLightMode;
+
+        updateRgbaVars(); // in case we start in light mode
+
+        // Add change listener
+        themeSwitch.addEventListener('change', function(event) {
+            const isNowLightMode = event.target.checked;
+            DOM.body.classList.toggle('light-mode', isNowLightMode);
             
-            if (isLightMode) {
-                DOM.body.classList.add('light-mode');
-                if (DOM.sunIcon) DOM.sunIcon.classList.remove('active');
-                if (DOM.moonIcon) DOM.moonIcon.classList.add('active');
-            } else {
-                if (DOM.sunIcon) DOM.sunIcon.classList.add('active');
-                if (DOM.moonIcon) DOM.moonIcon.classList.remove('active');
+            try {
+                localStorage.setItem('theme', isNowLightMode ? 'light-mode' : 'dark-mode');
+            } catch (error) {
+                console.warn('Could not save theme preference:', error);
             }
-
-            DOM.themeToggle.addEventListener('click', function() {
-                const isNowLightMode = DOM.body.classList.toggle('light-mode');
-                
-                try {
-                    localStorage.setItem('theme', isNowLightMode ? 'light-mode' : 'dark-mode');
-                } catch (error) {
-                    console.warn('Could not save theme preference:', error);
-                }
-                
-                if (DOM.sunIcon) DOM.sunIcon.classList.toggle('active');
-                if (DOM.moonIcon) DOM.moonIcon.classList.toggle('active');
-
-                updateRgbaVars();
-            });
-            console.log('Theme toggle setup complete');
-        } catch (error) {
-            console.error('Error setting up theme toggle:', error);
-        }
+            
+            updateRgbaVars();
+        });
+        console.log('Theme toggle setup complete');
     }
 
     // Observe theme changes for RGBA updates
@@ -295,6 +282,49 @@
         console.log('Form validation setup complete');
     }
 
+    function setupTechStackSlider() {
+        const techStackContainer = document.querySelector('.tech-stack-icons');
+        if (techStackContainer) {
+            const icons = Array.from(techStackContainer.children);
+            icons.forEach(icon => {
+                const clone = icon.cloneNode(true);
+                techStackContainer.appendChild(clone);
+            });
+        }
+    }
+
+    async function fetchGitHubRepos() {
+        const repoListContainer = document.getElementById('repo-list');
+        if (!repoListContainer) return;
+
+        try {
+            const response = await fetch('https://api.github.com/users/Rocky-1018/repos?sort=stars&per_page=5');
+            if (!response.ok) {
+                throw new Error(`GitHub API returned ${response.status}`);
+            }
+            const repos = await response.json();
+
+            repoListContainer.innerHTML = ''; // Clear "Fetching..." message
+
+            repos.forEach(repo => {
+                const repoEl = document.createElement('div');
+                repoEl.className = 'repo-item';
+
+                repoEl.innerHTML = `
+                    <h6><a href="${repo.html_url}" target="_blank" rel="noopener noreferrer">${repo.name}</a></h6>
+                    <div class="repo-stats">
+                        ${repo.language ? `<p><small>${repo.language}</small></p>` : ''}
+                    </div>
+                `;
+                repoListContainer.appendChild(repoEl);
+            });
+
+        } catch (error) {
+            console.error('Error fetching GitHub repos:', error);
+            repoListContainer.innerHTML = '<p>Could not fetch GitHub activity.</p>';
+        }
+    }
+
     // Initialize everything when DOM is ready
     function init() {
         cacheDOMElements();
@@ -306,6 +336,8 @@
         setupThemeToggle();
         setupThemeObserver();
         setupFormValidation();
+        setupTechStackSlider();
+        fetchGitHubRepos();
         
         console.log('Portfolio initialized successfully');
     }
