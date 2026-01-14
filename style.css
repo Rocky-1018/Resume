@@ -348,6 +348,8 @@ a:hover, a:focus {
     text-align: center;
     color: #fff;
     overflow: hidden;
+    margin-left: -15px; /* Negate parent's left padding */
+    margin-right: -15px; /* Negate parent's right padding */
 }
 
 .hero-background {
@@ -858,6 +860,8 @@ footer {
     padding: 1.5rem 0;
     text-align: center;
     border-top: 1px solid var(--current-glass-border);
+    margin-left: -15px; /* Negate parent's left padding */
+    margin-right: -15px; /* Negate parent's right padding */
 }
 
 /* Responsive Design */
